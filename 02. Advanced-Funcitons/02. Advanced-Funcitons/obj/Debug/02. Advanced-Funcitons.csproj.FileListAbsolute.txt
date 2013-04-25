@@ -1,0 +1,5 @@
+E:\TELERIK\HW\JS2-homeworks\02. Advanced-Funcitons\02. Advanced-Funcitons\bin\_02.Advanced_Funcitons.dll
+E:\TELERIK\HW\JS2-homeworks\02. Advanced-Funcitons\02. Advanced-Funcitons\bin\_02.Advanced_Funcitons.pdb
+E:\TELERIK\HW\JS2-homeworks\02. Advanced-Funcitons\02. Advanced-Funcitons\obj\Debug\02. Advanced-Funcitons.csprojResolveAssemblyReference.cache
+E:\TELERIK\HW\JS2-homeworks\02. Advanced-Funcitons\02. Advanced-Funcitons\obj\Debug\_02.Advanced_Funcitons.dll
+E:\TELERIK\HW\JS2-homeworks\02. Advanced-Funcitons\02. Advanced-Funcitons\obj\Debug\_02.Advanced_Funcitons.pdb

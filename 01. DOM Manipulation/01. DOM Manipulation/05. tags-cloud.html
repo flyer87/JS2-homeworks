@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tags cloud</title>
+</head>
+<body>
+    <div id="wrapper">
+    </div>
+
+    <script>
+        var minSize = 17;
+        var maxSize = 50;
+        var maxWidth = screen.width - 100;
+        var maxHeight = screen.height - 300;
+		var zoomCoef = 7;
+
+
+        var tags = ["cms", "javascript", "js",
+                    "ASP.NET MVC", ".net", ".net", "css",
+                    "wordpress", "xaml", "js", "http", "web",
+                    "asp.net", "asp.net MVC", "ASP.NET MVC",
+                    "wp", "javascript", "js", "cms", "html",
+                    "javascript", "http", "http", "CMS"];
+
+        generateTagCloud(tags, minSize, maxSize);
+
+        function generateTagCloud(tags, minSize, maxSize) {
+            var wrapper = document.getElementById("wrapper");
+            while (wrapper.firstChild) {
+                wrapper.removeChild(wrapper.firstChild);
+            }
+
+            var addedTags = [];
+            var isAdded = false;
+            var docFragment = document.createDocumentFragment();
+
+            for (var index = 0, len = tags.length; index < len; index++) {
+                for (var i = 0; i < addedTags.length; i++) {
+                    if (tags[index] === addedTags[i]) {
+                        isAdded = true;
+                        break;
+                    }
+                }
+
+                if (!isAdded) {
+                    var currentTag = tags[index];
+                    var tagCount = 0;
+
+                    for (var j = 0, len = tags.length; j < len; j++) {
+                        if (tags[j] === currentTag) {
+                            tagCount++;
+                        }
+
+                        var tagSize = minSize + tagCount*zoomCoef;
+                        if (tagSize > maxSize) {
+                            tagSize = maxSize;
+                        }
+                    }
+
+                    var div = document.createElement("div");
+                    div.style.position = "absolute";
+                    div.innerHTML = tags[index];
+                    div.style.top = generateRandomTopPosition();
+                    div.style.left = generateRandomLeftPosition();
+                    div.style.fontSize = tagSize+"px";
+                    docFragment.appendChild(div);
+                }
+            }
+
+            wrapper.appendChild(docFragment);
+        }
+
+        function generateRandomTopPosition() {
+            return ((Math.random() * maxHeight) | 0) + "px";;
+        }
+
+        function generateRandomLeftPosition() {
+            return ((Math.random() * maxWidth) | 0) + "px";
+        }
+
+
+    </script>
+</body>
+</html>

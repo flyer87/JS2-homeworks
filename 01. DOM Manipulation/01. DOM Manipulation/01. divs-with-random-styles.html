@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Divs with random styles</title>
+    <style>
+        a {
+            border: 1px solid black;
+            color: black;
+            text-decoration: none;
+            background-color: red;
+        }
+    </style>
+</head>
+
+
+<body>
+    <a href="#" onclick="onCreateDivButtonClick(event)">Generate</a>
+    <div id="wrapper">
+    </div>
+
+    <script>
+        var divCount = 45;
+        var wrapper = document.getElementById("wrapper");
+        var docFragment = document.createDocumentFragment();
+        var minDivWidthHeigth = 20;
+        var maxDivWidthHeigth = 100;
+        var maxWidth = screen.width - 100;
+        var maxHeight = screen.height - 300;
+
+        function onCreateDivButtonClick(e) {
+            while (wrapper.firstChild) wrapper.removeChild(wrapper.firstChild);
+
+            for (var i = 0; i < divCount; i++) {
+                var newDiv = document.createElement("div");
+
+                newDiv.style.width = generateRandomWidthHeight();
+                newDiv.style.height = generateRandomWidthHeight();
+
+                newDiv.style.backgroundColor = generateRandomColor();
+                newDiv.style.color = generateRandomColor();
+
+                newDiv.style.position = "absolute";
+                newDiv.style.top = generateRandomTopPosition();
+                newDiv.style.left = generateRandomLeftPosition();
+
+                //document.createElement("strong");
+                newDiv.innerHTML = "<strong>div</strong>";
+
+                newDiv.style.borderRadius = generateRandomBorderRadius();
+                newDiv.style.borderStyle = "solid";
+                newDiv.style.borderColor = generateRandomColor();
+                newDiv.style.borderWidth = generateRandomBorderWidth();
+
+                docFragment.appendChild(newDiv);
+            }
+
+            wrapper.appendChild(docFragment);
+        }
+
+        function generateRandomWidthHeight() {
+            var widthHeigth = (Math.random() * maxDivWidthHeigth) | 0;
+            if (widthHeigth < minDivWidthHeigth) {
+                widthHeigth = minDivWidthHeigth;
+            }
+
+            return widthHeigth + "px";
+        }
+
+        function generateRandomColor() {
+            var red = (Math.random() * 256) | 0;
+            var green = (Math.random() * 256) | 0;
+            var blue = (Math.random() * 256) | 0;
+
+            return "rgb(" + red + "," + green + "," + blue + ")";
+        }
+
+        function generateRandomTopPosition() {
+            return ((Math.random() * maxHeight) | 0) + "px";;
+        }
+
+        function generateRandomLeftPosition() {
+            return ((Math.random() * maxWidth) | 0) + "px";
+        }
+
+        function generateRandomBorderRadius() {
+            return ((Math.random() * 50) | 0) + "px";
+        }
+
+        function generateRandomBorderWidth() {
+            return ((Math.random() * 5) | 0) + "px";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Rotating divs</title>
+    <style>
+        #wrapper {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            top: 100px;
+            left: 0px;
+        }
+
+        .shiny-div {
+            width: 50px;
+            height: 50px;
+            border-radius: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#" onclick="onStartButtonClick(event)" id="start-button">Start</a>
+        <a href="#" onclick="onStopButtonClick(event)" id="stop-button">Stop</a>
+    </div>
+
+    <div id="wrapper">
+    </div>
+
+    <script>
+        var wrapper = document.getElementById("wrapper");
+        var count = 5;
+        var divs = document.getElementsByClassName("shiny-div");
+
+        var maxWidth = screen.width;
+        var maxHeight = screen.height;
+
+        var timer;
+        var radius = 100;
+        var angleStep = 5;
+        var doublePI = 2 * Math.PI;
+        var currentAngle = 0;
+
+        generateDivs(count);
+
+        // generate DIVs
+        function generateDivs(count) {
+            for (var i = 0; i < count; i++) {
+                var newDiv = document.createElement("div");
+                newDiv.classList.add("shiny-div");
+                rotateDiv(newDiv);
+                wrapper.appendChild(newDiv);
+            }
+        }
+
+        // rotate div
+        function rotateDiv(newDiv) {
+            newDiv.style.position = "absolute";
+
+            currentAngle += angleStep;
+
+            var topPos = parseInt(maxHeight / 5);
+            var x = topPos + Math.cos(currentAngle) * radius;
+            newDiv.style.top = x + "px";
+
+            var left = parseInt(maxWidth / 5);
+            var y = left + Math.sin(currentAngle) * radius;
+            newDiv.style.left = y + "px";
+
+            newDiv.style.backgroundColor = "rgb(171, 205, 80)";
+        }
+
+        function onStartButtonClick(e) {
+            if (!e) e = window.event;
+
+            clearInterval(timer);
+            timer = setInterval(function () {
+                for (var i = 0, len = divs.length; i < len; i++) {
+                    rotateDiv(divs[i]);
+                }
+            }, 50);
+
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+
+            return false;
+        }
+
+        function onStopButtonClick(e) {
+            if (!e) e = window.event;
+
+            clearInterval(timer);
+            document.getElementById("stop-button").disabled = true;
+
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

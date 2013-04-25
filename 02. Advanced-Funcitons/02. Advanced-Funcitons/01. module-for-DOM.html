@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<head>
+    <meta charset="utf-8" />
+    <title>DOM Utility Module - Telerik JavaScript Part 2 Course (2013) homework</title>
+</head>
+
+<body>
+    <h1>Create a module for working with the DOM (the output is in the browser console)</h1>
+    <div id="wrapper">Click me!</div>
+
+    <script>
+        (function () {
+            'use strinct';
+
+            var domUtil = (function () {
+                return {
+                    appendChild: function (parentSelector, childElement) {
+                        document.querySelector(parentSelector).appendChild(childElement);
+                    },
+                    createElement: function (type, content) {
+                        var element = document.createElement(type);
+                        element.innerHTML = content;
+
+                        return element;
+                    },
+                    removeChild: function (parentSelector, childSelector) {
+                        var selector = parentSelector + ' > ' + childSelector;
+                        var children = Array.prototype.slice.call(document.querySelectorAll(selector));
+
+                        children.forEach(function (child) {
+                            child.parentElement.removeChild(child);
+                        }
+                        );
+                    },
+                    getElement: function (selector) {
+                        return document.querySelectorAll(selector);
+                    },
+                    addHandler: function (selector, eventName, listener) {
+                        document.querySelector(selector).addEventListener(eventName, listener, false);
+                    }
+                }
+            })();
+
+            var parentSelector = "#wrapper";
+
+            (function (parentSelector) {
+                console.log("Add element");
+                var childElement = domUtil.createElement('div', 'child element');
+                domUtil.appendChild(parentSelector, childElement);
+
+                domUtil.addHandler("body", "click", function (event) { event.currentTarget.style.backgroundColor = "rgb(0, 200, 0)" });
+
+                //domUtil.removeChild(parentSelector, childElement.tagName.toLocaleLowerCase());
+
+            })(parentSelector);
+        }
+        )();
+    </script>
+</body>
