@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> To do list</title>
+    <style>
+        ul {
+            list-style:none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="text-to-add" />
+    <input type="button" id="add-button" value="Add" />
+    <input type="button" id="remove-button" value="Delete" />
+    <input type="button" id="show-button" value="Show" />
+    <input type="button" id="hide-button" value="Hide" />  
+    <br />
+    <br />
+    <label>TO DO LIST</label>
+    <ul id="todo-list">
+    </ul>
+
+    <script>
+        var addButton = document.getElementById("add-button");
+        addEventHandler(addButton, "click", addItem);
+
+        var removeButton = document.getElementById("remove-button");
+        addEventHandler(removeButton, "click", removeItem);
+
+        var showButton = document.getElementById("show-button");
+        addEventHandler(showButton, "click", show);
+
+        var hideButton = document.getElementById("hide-button");
+        addEventHandler(hideButton, "click", hide);
+
+        function addItem() {
+
+            var radioButton = document.createElement("input");
+            radioButton.type = "radio";
+            radioButton.name = "selected";
+
+            var listItem = document.createElement("li");
+            listItem.appendChild(radioButton);
+
+            var content = document.getElementById("text-to-add").value;
+            listItem.appendChild(document.createTextNode(content));
+
+            document.getElementById("todo-list").appendChild(listItem);
+        }
+
+        function removeItem() {
+            var liItems = document.querySelectorAll("ul>li");
+            for (var i = 0, len = liItems.length; i < len; i++) {
+                if (liItems[i].querySelector(":checked")) {
+                    liItems[i].parentNode.removeChild(liItems[i]);
+                }
+            }
+        }
+
+        function show() {
+            var liItems = document.querySelectorAll("ul>li");
+            for (var i = 0, len = liItems.length; i < len; i++) {
+                liItems[i].style.display = "list-item";
+            }
+
+        }
+
+        function hide() {
+            var liItems = document.querySelectorAll("ul>li");
+            for (var i = 0, len = liItems.length; i < len; i++) {
+                if (liItems[i].querySelector(":checked")) {
+                    liItems[i].style.display = "none";
+                }
+            }
+        }
+
+        function addEventHandler(element, eventType, eventHandler) {
+            if (typeof element === "function") {
+                return;
+            }
+
+            if (document.addEventListener) {
+                element.addEventListener(eventType, eventHandler);
+            }
+            else if (document.attachEvent) {
+                element.attachEvent("on" + eventType, eventHandler);
+            }
+            else {
+                element["on" + eventType] = eventHandler;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -23,6 +23,12 @@
     <script>
         var imgArray = ["img/1.jpg", "img/2.jpg", "img/3.jpg"];
 
+        var prevButton = document.getElementById("prev-button");
+        addEventHandler(prevButton, "click", prev);
+
+        var nextButton = document.getElementById("next-button");
+        addEventHandler(nextButton, "click", next);
+
         function prev() {
             var img = document.getElementById("img-carousel");
             var src = img.getAttribute("src");
@@ -45,13 +51,25 @@
             }
         }
 
+        function addEventHandler(element, eventType, eventHandler) {
+            if (document.attachEvent) {
+                element.attachEvent("on" + eventType, eventHandler);
+            }
+            else if (document.addEventListener) {
+                element.addEventListener(eventType, eventHandler);
+            }
+            else {
+                element["on" + eventType] = eventHandler;
+            }
+        }
+
     </script>
 </head>
 <body>
     <div id="container">
-        <a href="#" onclick="prev()"> Prev </a>
+        <a id="prev-button" href="#" onclick="prev()"> Prev </a>
         <img src="img/1.jpg" id="img-carousel" width="400" height="400"/>
-        <a href="#" onclick="next()"> Next </a>
+        <a id="next-button" href="#" onclick="next()"> Next </a>
     </div>
 </body>
 </html>
