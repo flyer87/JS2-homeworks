@@ -1,0 +1,10 @@
+E:\TELERIK\HW\JS2-homeworks\JavaScript-OOP\JavaScript-OOP\bin\JavaScript-OOP.dll
+E:\TELERIK\HW\JS2-homeworks\JavaScript-OOP\JavaScript-OOP\bin\JavaScript-OOP.pdb
+E:\TELERIK\HW\JS2-homeworks\JavaScript-OOP\JavaScript-OOP\obj\Debug\JavaScript-OOP.csprojResolveAssemblyReference.cache
+E:\TELERIK\HW\JS2-homeworks\JavaScript-OOP\JavaScript-OOP\obj\Debug\JavaScript-OOP.dll
+E:\TELERIK\HW\JS2-homeworks\JavaScript-OOP\JavaScript-OOP\obj\Debug\JavaScript-OOP.pdb
+E:\TELERIK\HW\JS2-homeworks\03. JavaScript-OOP\JavaScript-OOP\bin\JavaScript-OOP.dll
+E:\TELERIK\HW\JS2-homeworks\03. JavaScript-OOP\JavaScript-OOP\bin\JavaScript-OOP.pdb
+E:\TELERIK\HW\JS2-homeworks\03. JavaScript-OOP\JavaScript-OOP\obj\Debug\JavaScript-OOP.csprojResolveAssemblyReference.cache
+E:\TELERIK\HW\JS2-homeworks\03. JavaScript-OOP\JavaScript-OOP\obj\Debug\JavaScript-OOP.dll
+E:\TELERIK\HW\JS2-homeworks\03. JavaScript-OOP\JavaScript-OOP\obj\Debug\JavaScript-OOP.pdb

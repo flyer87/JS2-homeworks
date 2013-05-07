@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Console object</title>
+</head>
+<body>
+    <script>
+        (function () {
+
+            var specialConsole = (function () {
+                function formatString(string, optionalParams) {
+                    var formattedString = "";
+
+                    if (string) {
+                        formattedString = string.toString();
+
+                        if (optionalParams) {
+                            for (var i = 0, len = arguments.length; i < len; i++) {
+
+                                var pattern = "\\{" + i + "\\}";
+                                var regex = new RegExp(pattern, "g");
+
+                                formattedString = formattedString.replace(regex, arguments[i + 1]);
+                            }
+                        }
+                    }
+
+                    return formattedString;
+                }
+
+                function writeLine(inputString, optionalParams) {
+                    console.log(formatString(inputString, optionalParams));
+                }
+
+                function writeError(inputString, optionalParams) {
+                    console.error(formatString(inputString, optionalParams));
+                }
+
+                function writeWarning(inputString, optionalParams) {
+                    console.warn(formatString(inputString, optionalParams));
+                }
+
+                return {
+                    writeLine: writeLine,
+                    writeError: writeError,
+                    writeWarning: writeWarning
+                }
+            }
+            )();
+
+            (function () {
+                specialConsole.writeLine("Ho-ho-ho {0}", "Diado Mraz");
+            }
+            )();
+        }
+        )();
+    </script>
+</body>
+</html>

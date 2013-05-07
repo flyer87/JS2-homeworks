@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9446A3FB-783A-4ABD-84E8-59AF0015BF7C}</ProjectGuid>
+    <ProjectGuid>{A87194EB-FEB1-4235-A6A9-0312B734594E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_02.Advanced_Funcitons</RootNamespace>
-    <AssemblyName>_02.Advanced_Funcitons</AssemblyName>
+    <RootNamespace>_04.Javascript_APIs</RootNamespace>
+    <AssemblyName>_04.Javascript_APIs</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -57,8 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="01. module-for-DOM.html" />
-    <Content Include="03. console-object.html" />
+    <Content Include="01. drag-and-drop.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -87,7 +86,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49907/</IISUrl>
+          <IISUrl>http://localhost:63210/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

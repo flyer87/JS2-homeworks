@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Drag and drop</title>
+    <script>
+        function drag(e) {
+            e.dataTransfer.setData("dragged-id", e.target.id);
+        }
+
+        function dragOver(e) {
+            e.preventDefault();
+            var img = document.getElementById("suitcase");
+            img.src = "img/openedSuitcase.png";
+        }
+
+        function dragLeave(e) {
+            e.preventDefault();
+            var img = document.getElementById("suitcase");
+            img.src = "img/closedSuitcase.png";
+        }
+
+        function drop(e) {
+            //e.preventDefault();
+            var elementId = e.dataTransfer.getData("dragged-id");
+            var elementToRemove = document.getElementById(elementId);
+            //itemToRemove.parentNode.removeChild(itemToRemove);
+            //elementToRemove.parentNode.removeChild(elementToRemove);
+            var cntr = document.getElementById("container");
+            cntr.removeChild(elementToRemove);
+            dragLeave(e);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container" >
+        <img src="img/closedSuitcase.png" ondrop="drop(event)" id="suitcase" alt="closed suitcase" ondragover="dragOver(event)" onmouseout="dragLeave(event)" ondragleave="dragLeave(event)" />
+    </div>
+
+    <img src="img/2001.jpg" alt="money" draggable="true" ondragstart="drag(event)" style="margin-left: 100px" />
+</body>
+</html>

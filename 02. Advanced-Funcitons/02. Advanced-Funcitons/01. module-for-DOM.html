@@ -20,6 +20,7 @@
                     createElement: function (type, content) {
                         var element = document.createElement(type);
                         element.innerHTML = content;
+                        element.style.backgroundColor = "blue";
 
                         return element;
                     },
@@ -44,6 +45,10 @@
             var parentSelector = "#wrapper";
 
             (function (parentSelector) {
+                var child = domUtil.createElement("div", "div content");
+                var childrenToAppend = fillArray(100, child);
+                               
+
                 console.log("Add element");
                 var childElement = domUtil.createElement('div', 'child element');
                 domUtil.appendChild(parentSelector, childElement);
@@ -55,5 +60,15 @@
             })(parentSelector);
         }
         )();
+
+        function fillArray(count, element) {
+            var array = [];
+
+            for (var i = 0; i < count; i += 1) {
+                array[i] = element.cloneNode(true);
+            }
+
+            return array;
+        }
     </script>
 </body>
