@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Carousel</title>
+    <style>
+        a {
+            text-decoration: none;
+            border-color: black;
+            border-style: solid;
+            border-width: 2px;
+            padding: 2px 3px;
+            color: blue;
+        }
+
+        img {
+            margin: 3px;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+    <script>
+        var imgArray = ["img/1.jpg", "img/2.jpg", "img/3.jpg"];
+
+        function prev() {
+            var img = document.getElementById("img-carousel");
+            var src = img.getAttribute("src");
+            if (imgArray.indexOf(src) === 0) {
+                img .setAttribute("src", imgArray[imgArray.length - 1]);
+            }
+            else {
+                img.setAttribute("src", imgArray[imgArray.indexOf(src) - 1]);
+            }
+        }
+
+        function next() {
+            var img = document.getElementById("img-carousel");
+            var src = img.getAttribute("src");
+            if (imgArray.indexOf(src) === (imgArray.length-1)) {
+                img.setAttribute("src", imgArray[0]);
+            }
+            else {
+                img.setAttribute("src", imgArray[imgArray.indexOf(src) + 1]);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div id="container">
+        <a href="#" onclick="prev()"> Prev </a>
+        <img src="img/1.jpg" id="img-carousel" width="400" height="400"/>
+        <a href="#" onclick="next()"> Next </a>
+    </div>
+</body>
+</html>

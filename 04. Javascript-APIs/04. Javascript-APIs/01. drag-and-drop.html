@@ -19,15 +19,11 @@
             img.src = "img/closedSuitcase.png";
         }
 
-        function drop(e) {
-            //e.preventDefault();
-            var elementId = e.dataTransfer.getData("dragged-id");
-            var elementToRemove = document.getElementById(elementId);
-            //itemToRemove.parentNode.removeChild(itemToRemove);
-            //elementToRemove.parentNode.removeChild(elementToRemove);
-            var cntr = document.getElementById("container");
-            cntr.removeChild(elementToRemove);
-            dragLeave(e);
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("dragged-id");
+            var elementToRemove = document.getElementById(data);
+            elementToRemove.parentNode.removeChild(elementToRemove);
         }
     </script>
 </head>
@@ -37,6 +33,12 @@
         <img src="img/closedSuitcase.png" ondrop="drop(event)" id="suitcase" alt="closed suitcase" ondragover="dragOver(event)" onmouseout="dragLeave(event)" ondragleave="dragLeave(event)" />
     </div>
 
-    <img src="img/2001.jpg" alt="money" draggable="true" ondragstart="drag(event)" style="margin-left: 100px" />
+    <div>
+        <img src="img/2001.jpg" id="img3" alt="money" draggable="true" ondragstart="drag(event)" style="margin-left: 100px" />
+        <img src="img/2001.jpg" id="Img1" alt="money" draggable="true" ondragstart="drag(event)" style="margin-left: 100px" />
+        <img src="img/2001.jpg" id="Img2" alt="money" draggable="true" ondragstart="drag(event)" style="margin-left: 100px" />
+    </div>
+
+    <!-- Thanx to zhelyazkovn -->
 </body>
 </html>

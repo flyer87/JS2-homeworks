@@ -3,3 +3,8 @@ E:\TELERIK\HW\JS2-homeworks\04. Javascript-APIs\04. Javascript-APIs\bin\_04.Java
 E:\TELERIK\HW\JS2-homeworks\04. Javascript-APIs\04. Javascript-APIs\obj\Debug\04. Javascript-APIs.csprojResolveAssemblyReference.cache
 E:\TELERIK\HW\JS2-homeworks\04. Javascript-APIs\04. Javascript-APIs\obj\Debug\_04.Javascript_APIs.dll
 E:\TELERIK\HW\JS2-homeworks\04. Javascript-APIs\04. Javascript-APIs\obj\Debug\_04.Javascript_APIs.pdb
+J:\Yumer\TELERIK\JS2-homeworks\04. Javascript-APIs\04. Javascript-APIs\bin\_04.Javascript_APIs.dll
+J:\Yumer\TELERIK\JS2-homeworks\04. Javascript-APIs\04. Javascript-APIs\bin\_04.Javascript_APIs.pdb
+J:\Yumer\TELERIK\JS2-homeworks\04. Javascript-APIs\04. Javascript-APIs\obj\Debug\04. Javascript-APIs.csprojResolveAssemblyReference.cache
+J:\Yumer\TELERIK\JS2-homeworks\04. Javascript-APIs\04. Javascript-APIs\obj\Debug\_04.Javascript_APIs.dll
+J:\Yumer\TELERIK\JS2-homeworks\04. Javascript-APIs\04. Javascript-APIs\obj\Debug\_04.Javascript_APIs.pdb

@@ -1,0 +1,5 @@
+J:\Yumer\TELERIK\JS2-homeworks\05. JavaScript Event Model\05. JavaScript Event Model\bin\_05.JavaScript_Event_Model.dll
+J:\Yumer\TELERIK\JS2-homeworks\05. JavaScript Event Model\05. JavaScript Event Model\bin\_05.JavaScript_Event_Model.pdb
+J:\Yumer\TELERIK\JS2-homeworks\05. JavaScript Event Model\05. JavaScript Event Model\obj\Debug\05. JavaScript Event Model.csprojResolveAssemblyReference.cache
+J:\Yumer\TELERIK\JS2-homeworks\05. JavaScript Event Model\05. JavaScript Event Model\obj\Debug\_05.JavaScript_Event_Model.dll
+J:\Yumer\TELERIK\JS2-homeworks\05. JavaScript Event Model\05. JavaScript Event Model\obj\Debug\_05.JavaScript_Event_Model.pdb
